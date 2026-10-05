@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Comparação</title>
+</head>
+<body>
+
+    <table>
+        <tr><td><input id="a1"></td><td align="center">==</td><td><input id="b1"></td><td><button onclick="testar('1', '==')">Comparar</button></td></tr>
+        <tr><td><input id="a2"></td><td align="center">!=</td><td><input id="b2"></td><td><button onclick="testar('2', '!=')">Comparar</button></td></tr>
+        <tr><td><input id="a3"></td><td align="center">&gt;</td><td><input id="b3"></td><td><button onclick="testar('3', '>')">Comparar</button></td></tr>
+        <tr><td><input id="a4"></td><td align="center">&gt;=</td><td><input id="b4"></td><td><button onclick="testar('4', '>=')">Comparar</button></td></tr>
+        <tr><td><input id="a5"></td><td align="center">&lt;</td><td><input id="b5"></td><td><button onclick="testar('5', '<')">Comparar</button></td></tr>
+        <tr><td><input id="a6"></td><td align="center">&lt;=</td><td><input id="b6"></td><td><button onclick="testar('6', '<=')">Comparar</button></td></tr>
+    </table>
+
+    <script>
+        function testar(linha, op) {
+            let n1 = Number(document.getElementById('a' + linha).value);
+            let n2 = Number(document.getElementById('b' + linha).value);
+
+            let res = (op == '==' && n1 == n2) || (op == '!=' && n1 != n2) ||
+                      (op == '>'  && n1 > n2)  || (op == '>=' && n1 >= n2) ||
+                      (op == '<'  && n1 < n2)  || (op == '<=' && n1 <= n2);
+
+            alert(res ? "VERDADEIRO" : "FALSO");
+        }
+    </script>
+
+</body>
+</html>
